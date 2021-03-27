@@ -457,7 +457,7 @@
 
                     //左右各采样一次FaceLightMap的阴影数据存于lightData
                     float2 lightData = float2(SAMPLE_TEXTURE2D(_FaceShadowMap, sampler_FaceShadowMap, float2(input.uv.x, input.uv.y)).r,
-                    SAMPLE_TEXTURE2D(_FaceShadowMap, sampler_BaseMap, float2(-input.uv.x, input.uv.y)).r);
+                    SAMPLE_TEXTURE2D(_FaceShadowMap, sampler_FaceShadowMap, float2(-input.uv.x, input.uv.y)).r);
 
                     //修改lightData的变化曲线，使中间大部分变化速度趋于平缓。
                     lightData = pow(abs(lightData), _FaceShadowMapPow);
